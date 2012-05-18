@@ -13,10 +13,6 @@ module Measureable
       counters[counter] ||= Counter.new default
     end
 
-    def reset
-      counters = {}
-    end
-
     def values
       counters.collect do |id, counter|
         counter.value

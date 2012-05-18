@@ -23,7 +23,6 @@ module Measureable
       end
     end
 
-
     def increment amount = 1
       mutex.synchronize do
         @counter += amount

@@ -17,6 +17,13 @@ module Measureable
       end
     end
 
+    def value= amount
+      mutex.synchronize do
+        @counter = amount
+      end
+    end
+
+
     def increment amount = 1
       mutex.synchronize do
         @counter += amount

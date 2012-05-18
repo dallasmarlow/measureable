@@ -4,7 +4,7 @@ module Measureable
   class Counter
 
     def initialize value = 0
-      @counter = value
+      @default = @counter = value
     end
 
     def mutex
@@ -31,7 +31,7 @@ module Measureable
 
     def reset
       mutex.synchronize do
-        @counter = nil
+        @counter = @default
       end
     end
 

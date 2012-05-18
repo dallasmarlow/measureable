@@ -2,19 +2,19 @@ require 'counter'
 
 module Measureable
   class Counters
-    attr_accessor :options, :counters
+    attr_accessor :default, :counters
 
-    def initialize options = {}
-      @options  = { :default => 0 }.merge options
+    def initialize value = 0
+      @default  = value
       @counters = {}
     end
 
     def counter counter
-      counters[counter] ||= Counter.new options[:default]
+      counters[counter] ||= Counter.new default
     end
 
     def reset
-      counters = nil
+      counters = {}
     end
 
     def values

@@ -83,4 +83,22 @@ end
 
 timers.sleep.value
  => 6.510800000000001
+
+# measure time spent in each sleep
+sleep_timers = Measureable::Counters.new
+10.times do |i|
+  Measureable.latency sleep_timers.counter i do
+    sleep rand
+  end
+end
+
+sleep_timers.sum
+ => 4.646647
+
+sleep_timers.mean
+ => 0.4646647
+
+sleep_timers.standard_deviation
+ => 0.3255162689160113
+
 ```

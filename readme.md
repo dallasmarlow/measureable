@@ -7,7 +7,7 @@
 ## it can be a numeric value or another object that responds to increments and decrements.
 
 counter = Measureable::Counter.new
- => #<Measureable::Counter:0x007fc3550f10c0 @counter=0>
+ => #<Measureable::Counter:0x007fc3550f10c0 @counter=0, @default=0>
 
 counter.increment
  => 1

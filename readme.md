@@ -4,7 +4,7 @@
 ## simple thread safe counters supporting increment, decrement, value and reset.
 ##
 ## you can optionally assign a default value for your counter at instantiation, 
-## it can be a numeric value or another object that responds to increments and decrements.
+## it can be a numeric value or another object that responds to ruby style increments and decrements.
 
 counter = Measureable::Counter.new
  => #<Measureable::Counter:0x007fc3550f10c0 @counter=0, @default=0>
